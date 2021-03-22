@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" sizes="72x72" href="tolstoys_fav.png">
+  <meta name="description" content="Tolstoys is a young quintet delivering mature sounding dream-pop with elements of electronic and acoustic music.">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="build/tailwind.css?ver=13">
+  <meta property="og:title" content="Tolstoys" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolstoys.sk" />
+  <meta property="og:image" content="https://tolstoys.sk/tolstoys_social.png" />
+  <meta property="og:description" content="Tolstoys is a young quintet delivering mature sounding dream-pop with elements of electronic and acoustic music." />
+  <title>Tolstoys</title>
+</head>
+<body class="font-sans antialiased">
+
+  <div id="tempo_overlay" class="fixed inset-0 flex items-center justify-center z-30">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="w-full max-w-3xl lg:p-16 z-20">
+      <div class="relative w-full bg-white rounded-xl" style="padding-bottom: 100%;">
+        <img class="absolute w-full h-full object-cover rounded-xl" src="cover_art.jpg" alt="Tempo">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <button id="tempo_overlay_hide" class="absolute top-0 right-0 mr-4 mt-4">
+            <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="https://www.w3.org/2000/svg">
+              <line x1="10.9603" y1="32.1735" x2="32.1735" y2="10.9603" stroke="white" stroke-width="3"/>
+              <line x1="32.1732" y1="31.4663" x2="10.96" y2="10.2531" stroke="white" stroke-width="3"/>
+            </svg>
+          </button>
+          <div class="max-w-sm text-center">
+            <span class="relative text-white text-4xl font-semibold z-30">New single <span class="font-bold">"Tri Mestá"</span> out now!</span>
+
+            <a href="https://slnko.lnk.to/trimesta" class="inline-flex ml-4 mt-4 items-center rounded-full py-2 px-6 bg-white z-20" target="_blank">
+              <span>
+                <svg width="29" height="29" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M29 14.5C29 22.504 22.504 29 14.5 29S0 22.504 0 14.5 6.496 0 14.5 0 29 6.496 29 14.5zM7.53 19.731l.145-.039c6.737-1.38 10.096.383 11.715 1.233.461.242.78.41.997.41.893 0 1.316-1.23.32-1.865-4.173-2.496-9.067-2.59-13.856-1.532-1.189.252-.977 1.907.128 1.907.135 0 .352-.06.55-.114zm13.71-2.476c-3.655-2.163-9.102-3.035-13.95-1.72-.074.02-.139.04-.2.06a1.532 1.532 0 01-.496.093c-1.294 0-1.637-1.947-.227-2.344 5.698-1.601 11.811-.667 16.067 1.864.474.28.66.644.66 1.152a1.133 1.133 0 01-1.133 1.14.254.254 0 00-.084-.007c-.075.003-.172.007-.637-.238zm2.533-4.21c1.401 0 1.92-1.922.602-2.682C19.232 7.36 10.96 6.856 5.495 8.456c-.525.152-1.017.602-1.017 1.396 0 .777.59 1.38 1.362 1.38.233 0 .454-.065.643-.12.039-.01.076-.022.112-.032 4.817-1.344 12.261-.749 16.421 1.736.264.152.451.228.756.228v.001z" fill="#D69BC6"/></svg>
+              </span>
+              <span class="ml-2 font-bold text-t-pink">Listen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="spotify://track/3ldBfZwCZBfnbBZ88PLIwR?si=WCEMEVnpTZGIFiRC4x2nXQ&si=WCEMEVnpTZGIFiRC4x2nXQ" class="hidden sm:flex fixed ml-4 mt-4 items-center rounded-full py-2 px-6 bg-white z-20" target="_blank">
+    <span>
+      <svg width="29" height="29" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M29 14.5C29 22.504 22.504 29 14.5 29S0 22.504 0 14.5 6.496 0 14.5 0 29 6.496 29 14.5zM7.53 19.731l.145-.039c6.737-1.38 10.096.383 11.715 1.233.461.242.78.41.997.41.893 0 1.316-1.23.32-1.865-4.173-2.496-9.067-2.59-13.856-1.532-1.189.252-.977 1.907.128 1.907.135 0 .352-.06.55-.114zm13.71-2.476c-3.655-2.163-9.102-3.035-13.95-1.72-.074.02-.139.04-.2.06a1.532 1.532 0 01-.496.093c-1.294 0-1.637-1.947-.227-2.344 5.698-1.601 11.811-.667 16.067 1.864.474.28.66.644.66 1.152a1.133 1.133 0 01-1.133 1.14.254.254 0 00-.084-.007c-.075.003-.172.007-.637-.238zm2.533-4.21c1.401 0 1.92-1.922.602-2.682C19.232 7.36 10.96 6.856 5.495 8.456c-.525.152-1.017.602-1.017 1.396 0 .777.59 1.38 1.362 1.38.233 0 .454-.065.643-.12.039-.01.076-.022.112-.032 4.817-1.344 12.261-.749 16.421 1.736.264.152.451.228.756.228v.001z" fill="#D69BC6"/></svg>
+    </span>
+    <span class="ml-2 font-bold text-t-pink">Play on Spotify</span>
+  </a>
+
+  <a href="spotify://track/3ldBfZwCZBfnbBZ88PLIwR?si=WCEMEVnpTZGIFiRC4x2nXQ&si=WCEMEVnpTZGIFiRC4x2nXQ" class="sm:hidden fixed bottom-0 left-0 right-0 flex items-center justify-center rounded-full mx-4 mb-4 py-2 px-6 bg-white z-20" target="_blank">
+    <span>
+      <svg width="29" height="29" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M29 14.5C29 22.504 22.504 29 14.5 29S0 22.504 0 14.5 6.496 0 14.5 0 29 6.496 29 14.5zM7.53 19.731l.145-.039c6.737-1.38 10.096.383 11.715 1.233.461.242.78.41.997.41.893 0 1.316-1.23.32-1.865-4.173-2.496-9.067-2.59-13.856-1.532-1.189.252-.977 1.907.128 1.907.135 0 .352-.06.55-.114zm13.71-2.476c-3.655-2.163-9.102-3.035-13.95-1.72-.074.02-.139.04-.2.06a1.532 1.532 0 01-.496.093c-1.294 0-1.637-1.947-.227-2.344 5.698-1.601 11.811-.667 16.067 1.864.474.28.66.644.66 1.152a1.133 1.133 0 01-1.133 1.14.254.254 0 00-.084-.007c-.075.003-.172.007-.637-.238zm2.533-4.21c1.401 0 1.92-1.922.602-2.682C19.232 7.36 10.96 6.856 5.495 8.456c-.525.152-1.017.602-1.017 1.396 0 .777.59 1.38 1.362 1.38.233 0 .454-.065.643-.12.039-.01.076-.022.112-.032 4.817-1.344 12.261-.749 16.421 1.736.264.152.451.228.756.228v.001z" fill="#D69BC6"/></svg>
+    </span>
+    <span class="ml-2 font-bold text-t-pink">Play on Spotify</span>
+  </a>
+
+  <button id="mobile_hamburger" class="sm:hidden absolute top-0 right-0 z-20 px-4 py-4">
+    <svg width="24" height="24" viewBox="0 0 24 24" class="w-8 h-8 stroke-current text-white" fill="none" xmlns="https://www.w3.org/2000/svg">
+    <path id="icon_menu" d="M4 6H20M4 12H20M4 18H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="icon_x" class="hidden" d="M6 18L18 6M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <header id="mobile_menu" class="hidden sm:hidden bg-black py-4">
+    <ul class="flex flex-col items-center max-w-xl w-full text-xl text-white">
+      <li><a href="#concerts">Concerts</a></li>
+      <li class="mt-2"><a href="#album">Album</a></li>
+      <li class="mt-2"><a href="#about_us">About us</a></li>
+      <li class="mt-2"><a href="#contact"></a>Contact</li>
+    </ul>
+  </header>
+
+  <div class="relative" style="opacity: 95%">
+    <img class="w-full max-h-screen object-cover z-0" src="tolstoys_stage.png" alt="Tolstoys">
+
+    <div class="absolute inset-0 flex items-center justify-center w-full z-10">
+      <header class="hidden sm:flex absolute top-0 w-full px-4 py-6 items-center justify-end lg:justify-center">
+        <ul class="flex justify-between max-w-sm lg:max-w-xl w-full text-xl text-white">
+          <li><a href="#concerts">Concerts</a></li>
+          <li><a href="#album">Album</a></li>
+          <li><a href="#about_us">About us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </header>
+      <h1 class="heading text-white font-bold tracking-widest uppercase">Tolstoys</h1>
+    </div>
+  </div>
+
+  <!-- <div id="concerts" class="bg-t-blue py-24">
+    <div class="text-center px-2">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl text-t-pink font-bold">Upcoming concerts</h2>
+    </div>
+
+    <div class="mt-20 px-6 flex justify-center">
+      <div class="w-full max-w-4xl">
+        <div class="flex justify-between sm:justify-start items-center py-4 text-t-pink border-t border-t-pink-400">
+          <span class="font-semibold">July 25 2020</span>
+          <div class="ml-auto">
+            <p class="text-right text-xl sm:text-2xl font-bold">Festival Kukokli</p>
+            <p class="text-right font-semibold">Horní Vítkov, CZ</p>
+          </div>
+        </div>
+
+        <div class="flex justify-between sm:justify-start items-center py-4 text-t-pink border-t border-t-pink-400">
+          <span class="font-semibold">September 11-12 2020</span>
+          <div class="ml-auto">
+            <p class="text-right text-xl sm:text-2xl font-bold">United Islands</p>
+            <p class="text-right font-semibold">Praha, CZ</p>
+          </div>
+        </div>
+
+        <div class="flex justify-between sm:justify-start items-center py-4 text-t-pink border-t border-t-pink-400">
+          <span class="font-semibold">September 29 2020</span>
+          <div class="ml-auto">
+            <p class="text-right text-xl sm:text-2xl font-bold">Olomoucký Majáles</p>
+            <p class="text-right font-semibold">Olomouc, CZ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div id="album" class="bg-t-pink py-24 overflow-hidden">
+    <div class="text-center px-2">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl text-t-blue font-bold">Album</h2>
+    </div>
+
+    <div class="mt-20 px-6 flex justify-center text-t-blue">
+      <div class="w-full max-w-lg md:max-w-4xl">
+        <div class="flex flex-col md:flex-row md:items-start">
+          <div>
+            <span class="inline-block text-3xl font-bold">Botanika</span>
+            <div class="mt-4 text-lg">
+              <div>
+                <span class="text-t-blue-100">01</span>
+                <span class="ml-4">Nice Song</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">02</span>
+                <span class="ml-4">Motto</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">03</span>
+                <span class="ml-4">Agapé</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">04</span>
+                <span class="ml-4">Interlude (veľrybky)</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">05</span>
+                <span class="ml-4">Cannibal</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">06</span>
+                <span class="ml-4">Diamond Coat</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">07</span>
+                <span class="ml-4">Blue</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">08</span>
+                <span class="ml-4">Dieťa Slnka</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">09</span>
+                <span class="ml-4">Right Choice</span>
+              </div>
+              <div class="mt-1">
+                <span class="text-t-blue-100">10</span>
+                <span class="ml-4">Agapé (Hertztruba remix)</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.slnkorecords.sk/tolstoys/botanika" target="_blank" class="inline-block album relative w-64 sm:max-w-xs sm:w-full md:max-w-md mt-10 md:ml-12 md:mt-0 lg:ml-32 cursor-pointer">
+            <img class="relative shadow-2xl z-10" src="botanika.png" alt="Botanika">
+            <img class="album-cd absolute h-full transition duration-300 ease-in-out" src="botanika_cd.png" alt="Botanika CD">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-t-purple py-24">
+    <div class="text-center px-2">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl text-white font-bold">Music videos</h2>
+    </div>
+
+    <div class="mt-20 mb-20 px-6 grid gap-12 lg:gap:8 grid-cols-1 lg:grid-cols-2 max-w-lg md:max-w-4xl mx-auto">
+      <div class="youtube-container relative w-full">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/_U7tiXJBNF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="absolute bottom-0 -mb-8 font-bold text-lg text-t-teal">Tri Mestá</span>
+      </div>
+      <div class="youtube-container relative w-full">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/CbIDrNqv9cs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="absolute bottom-0 -mb-8 font-bold text-lg text-t-teal">Tempo</span>
+      </div>
+      <div class="youtube-container relative w-full">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/bEfEj8L3YPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="absolute bottom-0 -mb-8 font-bold text-lg text-t-teal">Olivy</span>
+      </div>
+      <div class="youtube-container relative w-full">
+        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/5X01LY3t3Bo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="absolute bottom-0 -mb-8 font-bold text-lg text-t-teal">Agapé</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="about_us" class="bg-t-teal py-24">
+    <div class="text-center px-2">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl text-t-blue font-bold">About us</h2>
+    </div>
+
+    <div class="flex justify-center mt-20 px-6">
+      <div class="w-full max-w-4xl">
+        <p>Tolstoys is a young quintet delivering mature sounding dream-pop with elements of electronic and acoustic music.</p>
+        <p class="mt-4">The unmistakable voice and sensitive expression of the singer Ela Tolstova, mingled in with melancholic indie-pop melodies, precise rhythm section, and interesting arrangements (violin, double-bass, and samples) will quickly draw you in.</p>
+        <p class="mt-4">
+          <span class="float-left max-w-md pr-5 pb-5 lg:-ml-10">
+            <span class="text-2xl font-bold italic">“To be making music this good, this challenging yet polished at the same time at such an early stage in their careers can only reap dividends for the future.”</span>
+            <span class="block mt-2">– Dom Gourlay, Editor of Drowned in Sound</span>
+          </span>
+          <p>Their album “Botanika” has won the Debut of the Year Award at the Radio Head Awards 2017.</p>
+          <p class="mt-4">They performed at the Colours of Ostrava, Pohoda and Grape festivals and important showcase festivals around, such as -MENT in Ljubljana, BUSH in Budapest, Sharpe in Bratislava, Nouvelle in Prague and the most prestigious showcase festival in Europe — the Dutch Eurosonic Noorderslag. They opened for Tom Odell or Lola Marsh.</p>
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-20 px-6">
+      <div class="w-full max-w-md">
+        <img src="ilustracia.png" alt="Ilustrácia Tolstoys">
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-t-blue pt-12 pb-6 lg:pt-32">
+    <div class="text-center">
+      <h2 class="footer-heading text-t-pink font-bold uppercase tracking-widest">Tolstoys</h2>
+    </div>
+
+    <div class="flex justify-center px-6">
+      <div class="flex items-center justify-between mt-32 max-w-2xl w-full">
+        <a href="https://www.instagram.com/tolstoys_official" target="_blank">
+          <svg width="45" height="45" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M43.2 7.659c.546 1.404.927 3.024 1.03 5.38.105 2.366.114 3.12.114 9.141 0 6.022-.026 6.776-.13 9.141-.104 2.357-.486 3.968-1.031 5.38a11.344 11.344 0 01-6.49 6.49c-1.404.546-3.024.927-5.38 1.031-2.366.104-3.12.13-9.141.13-6.022 0-6.776-.026-9.14-.13-2.358-.104-3.97-.485-5.381-1.03a10.916 10.916 0 01-3.925-2.557 10.937 10.937 0 01-2.565-3.933C.615 35.298.234 33.678.13 31.322.026 28.955 0 28.201 0 22.18c0-6.021.026-6.775.139-9.15.104-2.356.485-3.967 1.03-5.38a10.92 10.92 0 012.557-3.924A10.822 10.822 0 017.659 1.16C9.063.615 10.683.234 13.04.13 15.406.026 16.16 0 22.18 0c6.022 0 6.776.026 9.15.139 2.357.104 3.968.485 5.38 1.03a10.916 10.916 0 013.925 2.557A10.824 10.824 0 0143.2 7.659zm-3.726 27.604c.304-.78.667-1.95.763-4.115.104-2.34.13-3.033.13-8.95 0-5.918-.026-6.62-.13-8.959-.096-2.158-.46-3.336-.763-4.116a6.895 6.895 0 00-1.655-2.547 6.82 6.82 0 00-2.547-1.655c-.78-.303-1.95-.667-4.115-.762-2.331-.104-3.033-.13-8.96-.13-5.917 0-6.619.026-8.958.13-2.157.095-3.336.46-4.116.762a6.885 6.885 0 00-2.547 1.655 6.741 6.741 0 00-1.663 2.547c-.304.78-.668 1.95-.763 4.116-.104 2.33-.13 3.04-.13 8.959 0 5.917.026 6.62.13 8.959.095 2.157.46 3.335.763 4.115a6.895 6.895 0 001.655 2.547c.71.737 1.585 1.3 2.547 1.655.78.304 1.95.667 4.115.763 2.331.104 3.041.13 8.96.13 5.917 0 6.618-.026 8.958-.13 2.157-.096 3.336-.46 4.115-.763a7.358 7.358 0 004.211-4.21z" fill="#D69BC6"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10.787 22.18c0-6.29 5.103-11.393 11.393-11.393 6.29 0 11.394 5.103 11.394 11.393 0 6.29-5.103 11.394-11.394 11.394-6.29 0-11.393-5.103-11.393-11.394zm11.393-7.39a7.392 7.392 0 000 14.78 7.392 7.392 0 000-14.78z" fill="#D69BC6"/><path d="M34.024 12.996a2.66 2.66 0 110-5.32 2.66 2.66 0 010 5.32z" fill="#D69BC6"/></svg>
+        </a>
+        <a href="https://www.facebook.com/tolstoys.sk" target="_blank">
+          <svg width="21" height="40" fill="none" xmlns="https://www.w3.org/2000/svg"><path d="M16.427 6.642h3.652V.282C19.449.195 17.282 0 14.759 0 9.494 0 5.887 3.312 5.887 9.398V15H.077v7.11h5.81V40h7.124V22.112h5.575l.885-7.11h-6.462v-4.899c.002-2.055.555-3.461 3.418-3.461z" fill="#D69BC6"/></svg>
+        </a>
+        <a href="https://www.deezer.com/us/artist/12011358" target="_blank">
+          <svg width="40" height="40" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 0C8.955 0 0 8.954 0 20s8.955 20 20 20 20-8.954 20-20S31.045 0 20 0zM5.06 28.337v-1.65h5.447v1.65H5.06zm0-3.797v1.652h5.447V24.54H5.06zm0-.494v-1.651h5.447v1.65H5.06zm0-3.797v1.65h5.447v-1.65H5.06zm0-.496v-1.65h5.447v1.65H5.06zm6.108 8.584h5.447v-1.65h-5.447v1.65zm5.447-2.145h-5.447V24.54h5.447v1.652zm-5.447-2.146h5.447v-1.651h-5.447v1.65zm6.108 4.29v-1.65h5.448v1.65h-5.448zm0-3.796v1.652h5.448V24.54h-5.448zm0-.494v-1.651h5.448v1.65h-5.448zm0-3.797v1.65h5.448v-1.65h-5.448zm0-.496v-1.65h5.448v1.65h-5.448zm0-3.797v1.65h5.448v-1.65h-5.448zm0-.495V13.81h5.448v1.651h-5.448zm6.108 11.225v1.65h5.447v-1.65h-5.447zm0-.494V24.54h5.448v1.652h-5.448zm0-3.797v1.65h5.447v-1.65h-5.447zm0-.496v-1.65h5.448v1.65h-5.448zm0-3.797v1.65h5.447v-1.65h-5.447zm6.108 10.235v-1.65h5.448v1.65h-5.448zm0-3.797v1.652h5.448V24.54h-5.448zm0-.495v-1.651h5.448v1.65h-5.448zm0-3.797v1.651h5.448v-1.651h-5.448zm0-.495V18.1h5.448v1.652h-5.448zm0-3.797v1.65h5.448v-1.65h-5.448zm0-.496v-1.65h5.448v1.65h-5.448zm0-3.797v1.651h5.448v-1.65h-5.448z" fill="#D69BC6"/></svg>
+        </a>
+        <a href="https://soundcloud.com/tolstoys" target="_blank">
+          <svg width="46" height="26" fill="none" xmlns="https://www.w3.org/2000/svg"><path d="M38.658 11.454c-.51 0-1.011.054-1.492.158C36.52 5.102 31.015 0 24.34 0c-.79 0-1.432.641-1.432 1.432V24.34c0 .79.642 1.432 1.432 1.432h14.318a7.165 7.165 0 007.158-7.16c0-3.945-3.21-7.158-7.158-7.158zM18.613 2.864c-.79 0-1.432.641-1.432 1.431V24.34a1.432 1.432 0 002.864 0V4.295c0-.79-.642-1.431-1.432-1.431zM12.886 8.59c-.79 0-1.432.642-1.432 1.432V24.34a1.432 1.432 0 002.864 0V10.022c0-.79-.642-1.431-1.432-1.431zM7.159 8.59c-.79 0-1.432.642-1.432 1.432V24.34a1.432 1.432 0 002.864 0V10.022c0-.79-.642-1.431-1.432-1.431zM1.432 12.886c-.79 0-1.432.641-1.432 1.432v8.59a1.432 1.432 0 002.864 0v-8.59c0-.79-.642-1.432-1.432-1.432z" fill="#D69BC6"/></svg>
+        </a>
+        <a href="https://open.spotify.com/artist/19eCt7jL2g5BAktLU1KI2J?si=hxjhSLStSqSis-euBeUIFg" target="_blank">
+          <svg width="40" height="40" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M40 20c0 11.04-8.96 20-20 20S0 31.04 0 20 8.96 0 20 0s20 8.96 20 20zm-29.615 7.216c.07-.02.138-.038.202-.054 9.292-1.904 13.925.528 16.157 1.7.637.334 1.078.565 1.376.565 1.232 0 1.815-1.695.442-2.572-5.757-3.443-12.507-3.572-19.112-2.113-1.64.348-1.348 2.63.177 2.63.186 0 .485-.082.758-.156zM29.297 23.8c-5.042-2.983-12.555-4.187-19.242-2.372a8 8 0 00-.275.081c-.233.072-.417.13-.685.13-1.785 0-2.258-2.686-.313-3.234 7.86-2.208 16.291-.92 22.161 2.572.654.386.912.888.912 1.588-.008.87-.685 1.573-1.563 1.573a.349.349 0 00-.116-.01c-.104.004-.238.01-.88-.328zm3.493-5.807c1.933 0 2.648-2.651.83-3.7-7.093-4.14-18.502-4.836-26.04-2.63-.725.21-1.403.83-1.403 1.925 0 1.072.813 1.904 1.878 1.904.321 0 .626-.089.888-.165l.154-.044c6.643-1.855 16.911-1.033 22.65 2.394.363.21.621.315 1.041.315l.002.001z" fill="#D69BC6"/></svg>
+        </a>
+        <a href="https://itunes.apple.com/sk/artist/tolstoys/1209528559?l=sk" target="_blank">
+          <svg width="36" height="44" fill="none" xmlns="https://www.w3.org/2000/svg"><path d="M11.935 43.89C5.403 43.852 0 30.517 0 23.726c0-11.093 8.321-13.521 11.528-13.521 1.446 0 2.989.567 4.35 1.07.952.35 1.936.712 2.484.712.328 0 1.1-.308 1.782-.578 1.454-.579 3.263-1.298 5.37-1.298h.013c1.573 0 6.343.345 9.212 4.652l.671 1.01-.966.729c-1.382 1.042-3.902 2.943-3.902 6.71 0 4.46 2.854 6.175 4.225 7 .606.364 1.232.74 1.232 1.56 0 .537-4.28 12.05-10.494 12.05-1.52 0-2.595-.457-3.543-.86-.96-.408-1.787-.76-3.154-.76-.694 0-1.57.328-2.498.676-1.268.473-2.703 1.01-4.332 1.01h-.043zM26.173 0c.161 5.836-4.012 9.884-8.18 9.63C17.306 4.973 22.16 0 26.173 0z" fill="#D69BC6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-40 text-center text-t-pink">
+      <a href="https://bit.ly/tolstoys-press-kit" class="hover:underline" target="_blank">Press Kit</a>
+      <a href="https://bit.ly/tolstolstoys-rider-stageplan-hospitality" class="ml-4 hover:underline" target="_blank">Stageplan + Rider</a>
+    </div>
+
+    <div id="contact" class="mt-20 text-center text-t-pink">
+      <p class="font-bold uppercase">Management & Booking</p>
+      <a class="hover:underline" href="mailto:tolstoysmusic@gmail.com">tolstoysmusic@gmail.com</a>
+    </div>
+
+    <div class="mt-20 mb-20 sm:mb-0 text-center px-6">
+      <p class="inline-flex items-center flex-col sm:flex-row text-t-gray">
+        <span>Made with</span>
+        <span class="px-2 mt-2 sm:mt-0">
+          <svg width="18" height="15" fill="none" xmlns="https://www.w3.org/2000/svg"><path d="M15.882 1.468C14.989.52 13.763 0 12.431 0c-.997 0-1.908.308-2.711.914a5.476 5.476 0 00-1.096 1.119A5.474 5.474 0 007.529.914 4.403 4.403 0 004.82 0C3.487 0 2.26.521 1.369 1.468.485 2.403 0 3.682 0 5.067c0 1.426.544 2.731 1.71 4.108 1.045 1.231 2.546 2.481 4.284 3.929.593.494 1.266 1.054 1.964 1.651a1.026 1.026 0 001.334 0c.698-.597 1.371-1.157 1.965-1.652 1.737-1.447 3.238-2.697 4.282-3.928 1.167-1.377 1.711-2.682 1.711-4.108 0-1.385-.486-2.664-1.368-3.6z" fill="#858D97"/></svg>
+        </span>
+        <span class="mt-2 sm:mt-0">by <a class="text-white underline" href="https://rozkvet.studio" target="_blank">rozkvet.studio</a> & <a target="_blank" class="text-white underline" href="https://www.facebook.com/barboratt">@barboratt</a> listening to Tolstoys music in background.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js?ver=10"></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX2NL42');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+  <script>
+  (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+      (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement('script'),
+    m=f.getElementsByTagName('script')[0];
+    o.async=1; o.src=t; o.id='fathom-script';
+    m.parentNode.insertBefore(o,m)
+  })(document, window, '//analytics.rozkvet.studio/tracker.js', 'fathom');
+  fathom('set', 'siteId', 'DRXOF');
+  fathom('trackPageview');
+  </script>
+  <!-- / Fathom -->
+</body>
+</html>
